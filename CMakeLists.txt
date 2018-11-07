@@ -29,7 +29,7 @@ set(COMMON_HS
 set(COMMON_LIB
         )
 set(PROJECT_BOARD mega)
-set(PORT COM4)
+set(PORT COM8)
 
 set(INC_PATH     "./include")
 set(LIB_DIR_PATH "./lib")
