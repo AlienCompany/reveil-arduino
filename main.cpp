@@ -3,6 +3,7 @@
 #include "CommunicationService.h"
 #include "Led.h"
 #include "Sensor.h"
+//#include <LiquidCrystal_I2C.h>
 
 const uint8_t PIN_SENSOR = 2;
 const uint8_t PIN_LED1 = 3;
