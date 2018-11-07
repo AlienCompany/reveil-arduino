@@ -1,6 +1,12 @@
 cmake_minimum_required(VERSION 2.8.4)
 set(CMAKE_TOOLCHAIN_FILE ${CMAKE_SOURCE_DIR}/cmake/ArduinoToolchain.cmake)
 
+
+set(mega.build.mcu atmega2560)
+set(mega.upload.protocol wiring)
+set(mega.upload.speed 115200)
+
+
 set(COMMON_CPPS
         Util.cpp
         FixBug.c
@@ -22,7 +28,7 @@ set(COMMON_HS
         )
 set(COMMON_LIB
         )
-set(PROJECT_BOARD uno)
+set(PROJECT_BOARD mega)
 set(PORT COM4)
 
 set(INC_PATH     "./include")
