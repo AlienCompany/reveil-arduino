@@ -16,6 +16,8 @@ set(COMMON_CPPS
         Chain.cpp
         ChainElement.cpp
         CommunicationService.cpp
+        Lcd.cpp
+        Reveille.cpp
         )
 set(COMMON_HS
         ArrayAutoSize.h
@@ -23,8 +25,10 @@ set(COMMON_HS
         Sensor.h
         Led.h
         Chain.h
-        ChainElement.cpp
+        ChainElement.h
         CommunicationService.h
+        Lcd.h
+        Reveille.h
         )
 set(COMMON_LIB
         )
