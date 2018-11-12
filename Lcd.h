@@ -11,10 +11,20 @@ class Lcd {
 private:
     LiquidCrystal_I2C *lcdI2C;
 
+    int seconds = 00;
+    int minutes = 00;
+    int hours = 00;
+
+
 public:
     Lcd(uint8_t address, uint8_t column, uint8_t row);
+
     void init();
-    void printHour(String hour);
+
+    void hour();
+
+    void printHour();
+
     ~Lcd();
 };
 
