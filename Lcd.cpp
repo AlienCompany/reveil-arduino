@@ -62,3 +62,44 @@ void Lcd::hour() {
     }
 
 }
+
+void Lcd::printIp(IPAddress address) {
+    lcdI2C->setCursor(0,3);
+    address.printTo(*lcdI2C);
+}
+
+void Lcd::printWiFiFirmwareVersion(char *string) {
+    lcdI2C->setCursor(20-strlen(string),3);
+    lcdI2C->print(string);
+
+}
+
+void Lcd::progressbar(uint8_t c, uint8_t l, uint8_t size, float value) {
+    lcdI2C->setCursor(c,l);
+    uint8_t nbActiveCell = value*size;
+    int i;
+    for(i=0; i<nbActiveCell;i++)
+        lcdI2C->write(0xff);
+    for(; i<size;i++)
+        lcdI2C->write(0x5f);
+}
+
+void Lcd::clear() {
+    lcdI2C->clear();
+}
+
+void Lcd::loading(const char *msg, float progressBar) {
+    loading(msg,"",progressBar);
+}
+void Lcd::loading(const char *msg1, const char *msg2, float progressBar) {
+    lcdI2C->clear();
+    progressbar(5,1,10,progressBar);
+    printCentre(2, msg1);
+    printCentre(3, msg2);
+}
+
+void Lcd::printCentre(int line, const char *msg) {
+    size_t msgLength = strlen(msg);
+    lcdI2C->setCursor(10 - msgLength/2, line);
+    lcdI2C->print(msg);
+}

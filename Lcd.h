@@ -5,6 +5,7 @@
 #ifndef REVEIL_LCD_H
 #define REVEIL_LCD_H
 
+#include <IPAddress.h>
 #include "LiquidCrystal_I2C.h"
 
 class Lcd {
@@ -25,7 +26,21 @@ public:
 
     void printHour();
 
+    void progressbar(uint8_t c, uint8_t l, uint8_t size, float value);
+
     ~Lcd();
+
+    void printIp(IPAddress address);
+
+    void printWiFiFirmwareVersion(char *string);
+
+    void clear();
+
+    void loading(const char *msg, float progressBar);
+
+    void loading(const char *msg1, const char *msg2, float progressBar);
+
+    void printCentre(int line, const char *msg);
 };
 
 
