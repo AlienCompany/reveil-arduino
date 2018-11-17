@@ -21,7 +21,7 @@ SensorEventCode Sensor::checkChange() {
     if (valueSensor != currentState ) {
         currentState = valueSensor;
         lastEventDate = millis();
-        if (currentState == OPENED) {
+        if (currentState == SS_OPENED) {
             return OPEN;
         } else {
             return CLOSE;

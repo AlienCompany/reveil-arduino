@@ -14,8 +14,8 @@ enum SensorEventCode {
 };
 
 enum SensorState {
-    OPENED = 0,
-    CLOSED = 1
+    SS_OPENED = 0,
+    SS_CLOSED = 1
 };
 
 class Sensor {
